@@ -1,8 +1,8 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, Page } from '@playwright/test';
 
 const BASE = 'https://www.saucedemo.com/';
 
-async function doLogin(page) {
+async function doLogin(page: Page): Promise<void> {
   await page.goto(BASE);
   await page.fill('#user-name', 'standard_user');
   await page.fill('#password', 'secret_sauce');
